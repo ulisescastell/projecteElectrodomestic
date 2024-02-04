@@ -78,7 +78,7 @@ open class Electrodomestics {
     }**/
 
     override fun toString(): String {
-        return "\nTipus electrodomèstic: No definit\nPreu base: ${this.preuBase}\nColor: ${this.color}\nConsum: ${this.consum}\nPes: ${this.pes}\nPreu final: ${this.preuFinal}"
+        return "\nTipus electrodomèstic: $RED No definit  $RESET\nPreu base: $GREEN$preuBase$RESET EUR\nColor: $YELLOW$color$RESET\nConsum: $YELLOW$consum$RESET\nPes: $BLUE$pes$RESET KG\nPreu final: $RED$preuFinal$RESET EUR"
     }
 }
 
@@ -110,7 +110,7 @@ class Rentadora : Electrodomestics {
     }
 
     override fun toString(): String {
-        return "\nTipus electrodomèstic: Rentadora\nPreu base: ${this.preuBase}\nColor: ${this.color}\nConsum: ${this.consum}\nPes: ${this.pes}\nCàrrega: ${this.carrega}\nPreu final: ${this.preuFinal}\n"
+        return "\nTipus electrodomèstic: $GREEN Rentadora  $RESET\nPreu base: $GREEN$preuBase$RESET\nColor: $YELLOW$color$RESET\nConsum: $YELLOW$consum$RESET\nPes: $BLUE$pes$RESET KG\nCàrrega: $PURPLE$carrega$RESET\nPreu final: $RED$preuFinal$RESET EUR"
     }
 
 }
@@ -134,6 +134,11 @@ class Rentadora : Electrodomestics {
             this.preuFinal += valorPerMida
         }
 
+        fun preuFinalTelevisio () {
+            super.preuFinal
+
+        }
+
 
         fun getMida(): Int {
             return this.mida
@@ -144,7 +149,7 @@ class Rentadora : Electrodomestics {
         }
 
         override fun toString(): String {
-            return "\nTiups electrodomèstic: Televisió\nPreu base: ${this.preuBase}\nColor: ${this.color}\nConsum: ${this.consum}\nPes: ${this.pes}\nMida: ${this.mida}\nPreu final: ${this.preuFinal}"
+            return "\nTipus electrodomèstic: $GREEN Televisió  $RESET\nPreu base: $GREEN$preuBase$RESET EUR\nColor: $YELLOW$color$RESET\nConsum: $YELLOW$consum$RESET\nPes: $BLUE$pes$RESET KG\nMida: $PURPLE$mida$RESET'\nPreu final: $RED$preuFinal$RESET EUR"
         }
 
     }
