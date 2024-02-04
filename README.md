@@ -6,4 +6,10 @@ Aquest treball es una iniciació en el món de les superclases i subclases. Part
 
 ## Diagrama UML:
 
-![image](https://github.com/ulisescastell/projecteElectrodomestic/assets/149115239/642a1990-3f51-4078-8910-f6d02f329b97)
+![image](https://github.com/ulisescastell/projecteElectrodomestic/assets/149115239/c0326a0c-9ef5-46e7-b175-f6980a4f5c7d)
+
+## Output del programa:
+
+![image](https://github.com/ulisescastell/projecteElectrodomestic/assets/149115239/c6ea7ed5-56a7-4d57-b33b-47b721a3207c)
+
+
