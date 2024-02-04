@@ -10,15 +10,14 @@ fun main() {
         Electrodomestics(134.4,"Lila", 'D', 50.0),
         Electrodomestics(200.0,"Blau", 'E', 190.0),
         Electrodomestics(300.0,"Blau cel", 'F', 62.0),
-        Electrodomestics(140.5,"Vermell", 'A', 65.0),
-        Electrodomestics(130.0,"Blanc", 'C', 97.0),
-        Rentadora(106.2,"Negre", 'F', 34.0, 6),
-        Electrodomestics(500.7,"Blanc", 'A', 23.4)
+        Televisio(140.5,"Vermell", 'A', 65.0, 52),
+        Rentadora(320.0,"Blanc", 'B', 420.0, 5),
+        Rentadora(165.0,"Blanc", 'D', 220.0, 8),
+        Televisio(650.0,"Negre", 'C', 97.0, 28)
     )
     for (i in 0..llistaElectrodomestics.size-1) {
-        println("\n---------------")
-        print("\nElectrodomèstic ${i+1}:")
         llistaElectrodomestics[i].preuFinal()
-        println(llistaElectrodomestics[i])
+        println("\nElectrodomèstic ${i+1}: ${llistaElectrodomestics[i]}")
+        println("$PURPLE\n---------------$RESET")
     }
 }
