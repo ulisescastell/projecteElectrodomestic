@@ -96,7 +96,7 @@ class Rentadora : Electrodomestics {
             8 -> 70.0
             9 -> 85.0
             10 -> 100.0
-            else -> this.preuFinal
+            else -> 0.0
         }
          this.preuFinal += valorPerCarrega
     }
@@ -114,7 +114,6 @@ class Rentadora : Electrodomestics {
     }
 
 }
-
     class Televisio : Electrodomestics {
         private var mida: Int = 0
 
@@ -122,6 +121,19 @@ class Rentadora : Electrodomestics {
         {
             this.mida = mida
         }
+
+        override fun preuFinal() {
+            super.preuFinal()
+            val valorPerMida = when (this.mida) {
+                in 29..32 -> 50.0
+                in 32..42 -> 100.0
+                in 42..50 -> 150.0
+                in 51..80 -> 200.0
+                else -> 0.0
+            }
+            this.preuFinal += valorPerMida
+        }
+
 
         fun getMida(): Int {
             return this.mida
