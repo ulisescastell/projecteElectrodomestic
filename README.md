@@ -1,4 +1,8 @@
 # Treball electrodomèstic
+![image](https://github.com/ulisescastell/projecteElectrodomestic/assets/149115239/31eb9792-d006-4411-b6b8-cb86bce34593)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/:ulisescastell/:projecteElectrodomestic)
+
 
 ## Explicació i desenvolupament del encunciat:
 
