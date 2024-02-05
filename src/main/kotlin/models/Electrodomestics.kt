@@ -3,11 +3,11 @@ import controllers.*
 import utilities.*
 
 open class Electrodomestics {
-    protected var preuBase: Double = 0.0
-    protected var color: String = ""
-    protected var consum: Char = ' '
-    protected var pes: Double = 0.0
-    protected var preuFinal: Double = 0.0
+    @JvmField protected var preuBase: Double = 0.0
+    @JvmField protected var color: String = ""
+    @JvmField protected var consum: Char = ' '
+    @JvmField protected var pes: Double = 0.0
+    @JvmField protected var preuFinal: Double = 0.0
 
     constructor(preuBase: Double, color: String , consum: Char, pes: Double) {
         this.preuBase = preuBase
@@ -16,7 +16,7 @@ open class Electrodomestics {
         this.pes = pes
     }
 
-    open fun preuFinal () {
+    open fun preuFinal () : Double {
         val valorPerConsum = when (this.consum) {
             'A' -> 35.0
             'B' -> 30.0
@@ -41,41 +41,42 @@ open class Electrodomestics {
             }
         }
         this.preuFinal = preuBase+valorPerPes+valorPerConsum
+        return this.preuFinal
     }
 
     //ELS SEGÜENTS GETTERS/SETTERS NO ELS PUC POSSAR JA QUE EM DONA ERROR // MIRAR-HO
 
-    //protected fun getPreuBase (): Double {
-       // return this.preuBase
-    //}
+   fun getPreuBase (): Double {
+        return this.preuBase
+    }
 
-    //protected fun getColor(): String {
-       // return this.color
-    //}
+    fun getColor(): String {
+        return this.color
+    }
 
-    //protected fun getConsum(): Char {
-        //return this.consum
-    //}
+    fun getConsum(): Char {
+        return this.consum
+    }
 
-    /**protected fun getPes(): Double {
+   fun getPes(): Double {
         return this.pes
     }
 
-    //protected fun setPreuBase(preuBase: Double) {
-       // this.preuBase = preuBase
-    //}
+    fun setPreuBase(preuBase: Double) {
+        this.preuBase = preuBase
+    }
 
-    protected fun setColor(color: String) {
+    fun setColor(color: String) {
         this.color = color
     }
 
-    protected fun setConsum(consum: Char) {
+    fun setConsum(consum: Char) {
         this.consum = consum
     }
 
-    protected fun setPes(pes: Double) {
+    fun setPes(pes: Double) {
         this.pes = pes
-    }**/
+    }
 
     override fun toString(): String {
         return "\nTipus electrodomèstic: $RED No definit  $RESET\nPreu base: $GREEN$preuBase$RESET EUR\nColor: $YELLOW$color$RESET\nConsum: $YELLOW$consum$RESET\nPes: $BLUE$pes$RESET KG\nPreu final: $RED$preuFinal$RESET EUR"
@@ -89,7 +90,7 @@ class Rentadora : Electrodomestics {
         this.carrega = carrega
     }
 
-     override fun preuFinal() {
+     override fun preuFinal(): Double {
          super.preuFinal()
         val valorPerCarrega = when (this.carrega) {
             6, 7 -> 55.0
@@ -99,6 +100,7 @@ class Rentadora : Electrodomestics {
             else -> 0.0
         }
          this.preuFinal += valorPerCarrega
+         return this.preuFinal
     }
 
     fun getCarrega(): Int {
@@ -122,7 +124,7 @@ class Rentadora : Electrodomestics {
             this.mida = mida
         }
 
-        override fun preuFinal() {
+        override fun preuFinal(): Double {
             super.preuFinal()
             val valorPerMida = when (this.mida) {
                 in 29..32 -> 50.0
@@ -132,6 +134,7 @@ class Rentadora : Electrodomestics {
                 else -> 0.0
             }
             this.preuFinal += valorPerMida
+            return this.preuFinal
         }
 
         fun preuFinalTelevisio () {
